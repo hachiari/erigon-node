@@ -8,4 +8,4 @@ services:
       - /mnt/nvme4TB2/erigon:/home/erigon/.local/share/erigon
       - /mnt/nvme4TB2/erigon/jwt.hex:/secrets/jwt.hex:ro
       - ./erigon.yaml:/etc/erigon/erigon.yaml:ro
-    command: erigon --config=/etc/erigon/erigon.yaml
+    command: --config=/etc/erigon/erigon.yaml
