@@ -14,7 +14,7 @@ services:
       --http
       --http.addr=10.10.0.5
       --http.port=8545
-      --http.api=eth,net,web3,debug,trace,erigon
+      --http.api=eth,net,web3,debug,trace,erigon,ots,txpool
       --authrpc.addr=10.10.0.5
       --authrpc.port=8551
       --authrpc.jwtsecret=/secrets/jwt.hex
