@@ -14,5 +14,9 @@ authrpc.addr: "10.10.0.5"
 authrpc.port: 8551
 authrpc.jwtsecret: /secrets/jwt.hex
 
+# Caplin (embedded consensus layer)
+caplin.checkpoint-sync-url: "https://mainnet.checkpoint.sigp.io"
+
 # P2P
+nat: "extip:65.108.204.249"
 port: 30303
