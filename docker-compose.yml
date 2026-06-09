@@ -3,6 +3,7 @@ services:
     image: erigontech/erigon:v3.4.3
     restart: unless-stopped
     network_mode: host
+    mem_swappiness: 0
     volumes:
       - /mnt/nvme4TB2/erigon:/home/erigon/.local/share/erigon
       - /mnt/nvme4TB2/erigon/jwt.hex:/secrets/jwt.hex:ro
