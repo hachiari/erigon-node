@@ -5,7 +5,7 @@ services:
     network_mode: host
     volumes:
       - /mnt/nvme4TB2/erigon:/home/erigon/.local/share/erigon
-      - /mnt/nvme4TB2/jwt.hex:/secrets/jwt.hex:ro
+      - /mnt/nvme4TB2/erigon/jwt.hex:/secrets/jwt.hex:ro
     command: >
       erigon
       --datadir=/home/erigon/.local/share/erigon
