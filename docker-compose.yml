@@ -1,6 +1,6 @@
 services:
   erigon:
-    image: erigontech/erigon:latest
+    image: erigontech/erigon:v3.4.3
     restart: unless-stopped
     network_mode: host
     volumes:
@@ -12,9 +12,10 @@ services:
       --chain=mainnet
       --prune.mode=archive
       --http
-      --http.addr=127.0.0.1
+      --http.addr=10.10.0.5
       --http.port=8545
-      --authrpc.addr=127.0.0.1
+      --http.api=eth,net,web3,debug,trace,erigon
+      --authrpc.addr=10.10.0.5
       --authrpc.port=8551
       --authrpc.jwtsecret=/secrets/jwt.hex
       --internalcl
