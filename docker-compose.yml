@@ -3,21 +3,9 @@ services:
     image: erigontech/erigon:v3.4.3
     restart: unless-stopped
     network_mode: host
+    mem_swappiness: 0
     volumes:
       - /mnt/nvme4TB2/erigon:/home/erigon/.local/share/erigon
       - /mnt/nvme4TB2/erigon/jwt.hex:/secrets/jwt.hex:ro
-    command: >
-      erigon
-      --datadir=/home/erigon/.local/share/erigon
-      --chain=mainnet
-      --prune.mode=archive
-      --http
-      --http.addr=10.10.0.5
-      --http.port=8545
-      --http.api=eth,net,web3,erigon,debug,trace,ots,txpool,internal
-      --ws
-      --authrpc.addr=10.10.0.5
-      --authrpc.port=8551
-      --authrpc.jwtsecret=/secrets/jwt.hex
-      --internalcl
-      --port=30303
+      - ./erigon.yaml:/etc/erigon/erigon.yaml:ro
+    command: erigon --config=/etc/erigon/erigon.yaml
