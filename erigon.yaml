@@ -14,8 +14,5 @@ authrpc.addr: "10.10.0.5"
 authrpc.port: 8551
 authrpc.jwtsecret: /secrets/jwt.hex
 
-# Consensus layer (embedded Caplin)
-internalcl: true
-
 # P2P
 port: 30303
