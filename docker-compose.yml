@@ -1,0 +1,21 @@
+services:
+  erigon:
+    image: erigontech/erigon:latest
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - /mnt/nvme4TB2/erigon:/home/erigon/.local/share/erigon
+      - /mnt/nvme4TB2/jwt.hex:/secrets/jwt.hex:ro
+    command: >
+      erigon
+      --datadir=/home/erigon/.local/share/erigon
+      --chain=mainnet
+      --prune.mode=archive
+      --http
+      --http.addr=127.0.0.1
+      --http.port=8545
+      --authrpc.addr=127.0.0.1
+      --authrpc.port=8551
+      --authrpc.jwtsecret=/secrets/jwt.hex
+      --internalcl
+      --port=30303
