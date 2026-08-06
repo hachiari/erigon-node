@@ -1,6 +1,6 @@
 services:
   erigon:
-    image: erigontech/erigon:v3.4.3
+    image: erigontech/erigon:v3.5.4
     restart: unless-stopped
     network_mode: host
     mem_swappiness: 0
