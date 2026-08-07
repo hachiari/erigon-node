@@ -16,3 +16,8 @@ authrpc.jwtsecret: /secrets/jwt.hex
 
 # P2P
 port: 30303
+
+# RPC query limits — private node, sole consumers are BBB workers.
+# Default 1000 rejected the token-scorer's 50k-block eth_getLogs chunks
+# (ETH_TOKEN_SCORE_CHUNK) — every holder-snapshot replay failed silently.
+rpc.blockrange.limit: 100000
